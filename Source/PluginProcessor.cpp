@@ -174,8 +174,7 @@ void NordicSMC_EffectAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
                  
                         Here, we're applying the gain (controlled by the slider) to a sinusoid.
                  */
-                //nonLimitedOutput = gain * sin (2.0 * double_Pi * 440.0 * n / fs);
-                nonLimitedOutput = gain * input[i];
+                nonLimitedOutput = gain * sin (2.0 * double_Pi * 440.0 * n / fs);
 
                 // "Implementing a limiter is the single most important
                 // thing in real-time audio development" - Willemsen, 2021
