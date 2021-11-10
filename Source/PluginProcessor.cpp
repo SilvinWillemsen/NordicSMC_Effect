@@ -96,7 +96,7 @@ void NordicSMC_EffectAudioProcessor::prepareToPlay (double sampleRate, int sampl
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
     
-    fs = sampleRate; // Obtain the sample rate from the plugin host
+    fs = sampleRate; // Obtain the sample rate from the plugin host (or DAW) when the application starts
 }
 
 void NordicSMC_EffectAudioProcessor::releaseResources()
@@ -170,7 +170,7 @@ void NordicSMC_EffectAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
             // Loop over all the samples in our buffer
             for (int i = 0; i < buffer.getNumSamples(); ++i)
             {
-                /* Adding a parameter [2]: Applying to a signal
+                /* Adding a parameter [2]: Apply to a signal
                  
                         Here, we're applying the gain (controlled by the slider) to a sinusoid.
                  */
@@ -223,6 +223,7 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
     return new NordicSMC_EffectAudioProcessor();
 }
 
+// Implementation of the limiter
 float NordicSMC_EffectAudioProcessor::limit (float val, float min, float max)
 {
     if (val < min)

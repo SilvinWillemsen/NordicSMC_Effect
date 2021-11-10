@@ -53,7 +53,7 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
     
-    // Custom Limiter to keep the output signal between -1 and 1. Arguments are: input value, minimum value and maximum value
+    // Limiter to keep the output signal between -1 and 1. Arguments are: input value, minimum value and maximum value
     float limit (float val, float min, float max);
     
     
@@ -70,7 +70,7 @@ private:
     double fs; // to be obtained from the "prepareToPlay()" function
     
     
-    /* Adding a parameter [1]: Defining a variable
+    /* Adding a parameter [1]: Define a variable
      
             Here is where you want to add variables which you will use in the "processBlock()" function.
      */

@@ -13,7 +13,7 @@
 NordicSMC_EffectAudioProcessorEditor::NordicSMC_EffectAudioProcessorEditor (NordicSMC_EffectAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
-    /* Adding parameter control [2]: Setting up slider
+    /* Adding parameter control [2]: Set up slider
      
             A slider instance has many properties. The most important ones to set up are:
             - its range: setRange (min, max, stepSize)
@@ -28,7 +28,7 @@ NordicSMC_EffectAudioProcessorEditor::NordicSMC_EffectAudioProcessorEditor (Nord
      */
     gainSlider.addListener (this);
     
-    /* Adding parameter control [4]: Making the slider visible
+    /* Adding parameter control [4]: Make the slider visible
      
             The "addAndMakeVisible" function adds the slider to the JUCE application. Without this, the slider can not be used
      */
@@ -50,7 +50,7 @@ void NordicSMC_EffectAudioProcessorEditor::paint (juce::Graphics& g)
 
 void NordicSMC_EffectAudioProcessorEditor::resized()
 {
-    /* Adding parameter control [5]: Giving the slider "bounds"
+    /* Adding parameter control [5]: Give the slider "bounds"
      
             Using the "addAndMakeVisible" function is not enough to make a slider usable in your application. It also needs to be given a location and a size in the GUI. This is done in the resized() function, which is called when a component is resized (or setSize() is called, as in the constructor of this class).
      
@@ -62,9 +62,24 @@ void NordicSMC_EffectAudioProcessorEditor::resized()
     
 }
 
+
+/* Slider functionality setup [2b]: Implement the sliderValueChanged() function.
+        
+        Simply define the function without content in the .cpp file as:
+        
+        =============
+ 
+        void NordicSMC_EffectAudioProcessorEditor::sliderValueChanged (Slider* slider)
+        {
+         
+        }
+ 
+        =============
+ 
+ */
 void NordicSMC_EffectAudioProcessorEditor::sliderValueChanged (Slider* slider)
 {
-    /* Adding parameter control [7]: Applying the slider value to the Processor parameter
+    /* Adding parameter control [7]: Apply the slider value to the Processor parameter
      
             (Note: if you're looking for step [6], it's in the PluginProcessor.h file :) )
      
