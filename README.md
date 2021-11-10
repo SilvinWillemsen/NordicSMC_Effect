@@ -1,2 +1,2 @@
 # NordicSMC_Effect
-Simple audio plugin to be used as a starting point for the NordicSMC JUCE Workshop.
+Simple audio plugin to be used as a starting point for the NordicSMC JUCE Workshop. For further instructions, see documentation.pdf.
